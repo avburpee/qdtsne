@@ -115,7 +115,7 @@ Status<num_dim_, Index_, Float_> initialize(const knncolle::Prebuilt<Dim_, Index
     }
 
     auto neighbors = find_nearest_neighbors(prebuilt, K, options.num_threads);
-    return internal::initialize<num_dim_>(std::move(neighbors), options.perplexity, options);
+    return internal::initialize<num_dim_>(std::move(neighbors), static_cast<Float_>(options.perplexity), options);
 }
 
 /**
